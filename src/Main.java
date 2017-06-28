@@ -12,12 +12,14 @@ public class Main {
             System.out.println("Enter an Integer: ");
             userNum = scan.nextInt();
 
-            System.out.println("Number" + " " + "Squared" + " " + "Cubed");
+            System.out.printf("%-1s%10s%10s","Number", "Squared", "Cubed");
+            System.out.println();
 
-            for (int i = 0; i <= userNum; i++) {
+            for (int i = 1; i <= userNum; i++) {
                 int squared = (int) Math.pow(i, 2);
                 int cubed = (int) Math.pow(i, 3);
-                System.out.println(i + "      " + squared + "       " + cubed);
+                System.out.printf("%-1s%10s%15s", i, squared, cubed);
+                System.out.println();
             }
 
             choice = scan.nextLine();
