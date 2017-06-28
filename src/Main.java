@@ -10,16 +10,20 @@ public class Main {
 
         while (choice.equalsIgnoreCase("y")) {
             System.out.println("Enter an Integer: ");
+            while (!scan.hasNextInt()) {
+                String input = scan.nextLine();
+                System.out.println("Invalid Entry. Enter an Integer: ");
+            }
             userNum = scan.nextInt();
 
-            System.out.printf("%-1s%10s%10s","Number", "Squared", "Cubed");
-            System.out.println();
+            System.out.println("Number" + "\t" + "\t" + "Squared" + "\t" + "\t" + "Cubed");
+            System.out.println("======" + "\t\t" + "=======" + "\t\t" + "======");
 
             for (int i = 1; i <= userNum; i++) {
                 int squared = (int) Math.pow(i, 2);
                 int cubed = (int) Math.pow(i, 3);
-                System.out.printf("%-1s%10s%15s", i, squared, cubed);
-                System.out.println();
+                System.out.println(i + "\t\t\t"+ squared + "\t\t\t" + cubed);
+
             }
 
             choice = scan.nextLine();
